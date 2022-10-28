@@ -28,8 +28,8 @@ public class ProductException { 									// class with main method
 		Product p = new Product(); 								// creating object of the previous class
 		Scanner sc = new Scanner(System.in); 							//scanner class
 		System.out.println("Enter two integers to get the product : "); 			//print line to ask user for inputs
-		int x = sc.nextInt(); //storing the 1st integer input
-		int y = sc.nextInt(); //storing the 2nd integer input
+		int x = sc.nextInt(); 									//storing the 1st integer input
+		int y = sc.nextInt(); 									//storing the 2nd integer input
 		
 		
 		//calling power method with different user inputs
