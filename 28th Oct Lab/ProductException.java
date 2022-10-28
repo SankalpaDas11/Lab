@@ -9,7 +9,7 @@ class InvailException extends Exception { 								//sub class of exception
 		super(str);
 	}
 }
-class Product{ // class with power method
+class Product{ 												// class with product method
 	public int product(int x, int y) throws InvailException{ 					//method product to calculate result
 		if(x<0 && y<0) { 									// checking if any of the inputs is negative
 			throw new 
