@@ -1,34 +1,35 @@
 // Q.1 Wrapper class activity
 
-public class Student { // class with name 'Student' created
+public class Student { 			// class with name 'Student' created
 	
 	//1st method
-	public void calculateFeesStructure(long studentId, char studentGrade, double monthlyFees, boolean isScholarshipEligible) { // method to calculate fees
+	public void calculateFeesStructure(long studentId, char studentGrade, 
+					   double monthlyFees, boolean isScholarshipEligible) {		 	// method to calculate fees
 		
 		//checking criteria
-		if(studentId!=0 && studentGrade=='A' && isScholarshipEligible==true) { //checking if the grade is A
+		if(studentId!=0 && studentGrade=='A' && isScholarshipEligible==true) {				//checking if the grade is A
 			 double fees =monthlyFees -monthlyFees *10/100;
 			 System.out.println("10% of fees is exempted, the calculated fees is  " + (int)fees);
 		}
-		else if (studentId!=0 && studentGrade=='B' && isScholarshipEligible==true) { //checking if the grade is B
+		else if (studentId!=0 && studentGrade=='B' && isScholarshipEligible==true) { 			//checking if the grade is B
 			 double fees =monthlyFees -monthlyFees * 8/100 ; 
 			 System.out.println("8% of fees is exempted, the calculated fees is  " + (int)fees);
 		}
-		else if (studentId!=0 && studentGrade=='C' && isScholarshipEligible==true) { //checking if the grade is C
+		else if (studentId!=0 && studentGrade=='C' && isScholarshipEligible==true) { 			//checking if the grade is C
 			 double fees =monthlyFees -monthlyFees * 6/100 ; 
 			 System.out.println("6% of fees is exempted, the calculated fees is  " + (int)fees);
 		}
-		else if (studentId!=0 && studentGrade=='D' && isScholarshipEligible==true) { //checking if the grade is D
+		else if (studentId!=0 && studentGrade=='D' && isScholarshipEligible==true) { 			//checking if the grade is D
 			 double fees =monthlyFees -monthlyFees * 4/100 ; 
 			 System.out.println("4% of fees is exempted, the calculated fees is  " + (int)fees);
 		}
-		else {	//if none of the condition is satisfied
+		else {												//if none of the condition is satisfied
 			System.out.println("Not Eligible for Exemption"); 
 		}
 	}
 	
 	//2nd method
-	public void compareMarks(long Maths, double English) { // method to compare marks
+	public void compareMarks(long Maths, double English) {				 // method to compare marks
 		
 		//criteria
 		if((int)English > (int)Maths) {
@@ -43,19 +44,19 @@ public class Student { // class with name 'Student' created
 	}
 	
 	//3rd method
-	public void validateFees(Double Fees) { // method to validate whether fees is finite or not
+	public void validateFees(Double Fees) { 					// method to validate whether fees is finite or not
         if(Fees.isInfinite()) { // logic to check
            System.out.println("Fees is infinite");
         }
        else {
            System.out.println("Fees is not infinite");
        }
-        System.out.println(Fees.byteValue()); //printing byte value of fees
+        System.out.println(Fees.byteValue()); 						//printing byte value of fees
     }
 	
-	public static void main(String[] args) { // main method 
+	public static void main(String[] args) { 					// main method 
 		
-		Student student = new Student();	//object of the Student class
+		Student student = new Student();					//object of the Student class
 		
 		//calling 1st method with given inputs
 		student.calculateFeesStructure(234,'C',600,true);	
