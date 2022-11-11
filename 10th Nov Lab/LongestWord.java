@@ -6,9 +6,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class LongestWord {
+     
      public static void main(String [ ] args) throws FileNotFoundException {
-    	 String longest_word = ""; // string type variable to store the longest word
-         String current; // string type variable to store the current word for comparing
+          
+    	 String longest_word = "";                              // string type variable to store the longest word
+         String current;                                     // string type variable to store the current word for comparing
          Scanner sc = new Scanner(new File("F://test.txt")); // taking input of a file path
 
          while (sc.hasNext()) {
@@ -17,6 +19,7 @@ public class LongestWord {
                longest_word = current;
              }
          }
-         System.out.println(longest_word); // printing the longest word
+          
+         System.out.println(longest_word);                  // printing the longest word
      }
 }
