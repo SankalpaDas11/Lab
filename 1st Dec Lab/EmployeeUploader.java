@@ -11,22 +11,22 @@ import java.util.Scanner;
 public class EmployeeUploader {
 	static {
 		 try {
-		 	Class.forName("com.mysql.cj.jdbc.Driver");//registering my sql driver
+		 	Class.forName("com.mysql.cj.jdbc.Driver");							//registering my sql driver
 	 }
 		 catch(Exception e) {
 			 e.printStackTrace();
 		 }
 		 }
 	 public static Connection con()throws SQLException{
-		 return DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb","root","23October1999sd@#"); // connecting mysql driver
+		 return DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb","root","23October1999sd@#"); 	// connecting mysql driver
 		 
 	 }
-	 	static Scanner sc = new Scanner(System.in); // scanner class object
-		int e_id, e_contact, d_id; //column head instance variables
+	 	static Scanner sc = new Scanner(System.in); 			// scanner class object
+		int e_id, e_contact, d_id; 					//column head instance variables
 		float e_salary;
 		String e_name, e_address,d_name,d_head,d_desc;
 		//saving employee details in database
-		public void storeDepartmentDetails()throws SQLException{ // 1st method to store department records
+		public void storeDepartmentDetails()throws SQLException{ 	// 1st method to store department records
 	    	System.out.println("Enter Department id :");
 	    	d_id=sc.nextInt();
 	    	System.out.println("enter Department name :");
@@ -42,9 +42,9 @@ public class EmployeeUploader {
 	    	stmt.setString(3, d_head);
 	    	stmt.setString(4, d_desc);
 	    	stmt.executeUpdate();
-	    	System.out.println("----New Record Inserted----"); // confirmation
+	    	System.out.println("----New Record Inserted----"); 		// confirmation
 		}
-		public void storeEmployeeDetails()throws SQLException{ // 2nd method to store employee records
+		public void storeEmployeeDetails()throws SQLException{ 		// 2nd method to store employee records
 	    	System.out.println("Enter Employee Id :");
 	    	e_id=sc.nextInt();
 	    	System.out.println("Enter Employee Name :");
@@ -66,9 +66,9 @@ public class EmployeeUploader {
 	    	stmt.setInt(5, e_contact);
 	    	stmt.setInt(6, d_id);
 	    	stmt.executeUpdate();
-	    	System.out.println("----New Record Inserted----"); //confirmation
+	    	System.out.println("----New Record Inserted----"); 		//confirmation
 		}
-		public void retrieveEmployeeDetails() throws SQLException{ // 3rd method to display the records of both the tables
+		public void retrieveEmployeeDetails() throws SQLException{ 	// 3rd method to display the records of both the tables
 			Connection conn = EmployeeUploader.con();
 			Statement stmt = conn.createStatement();
 			ResultSet rs1=stmt.executeQuery("select * from Department");
@@ -83,10 +83,10 @@ public class EmployeeUploader {
 			}
 			System.out.println("---------------------------\n");
 		}
-	public void calculatePF(int e_id) throws SQLException{// 4th method to calculate pf of an employee by his id
+	public void calculatePF(int e_id) throws SQLException{						// 4th method to calculate pf of an employee by his id
 		Connection conn = EmployeeUploader.con();
 		Statement stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery("select e_salary from Employee where e_id ="+e_id); //fetching salary of an employee by his id
+		ResultSet rs = stmt.executeQuery("select e_salary from Employee where e_id ="+e_id); 	//fetching salary of an employee by his id
 		while(rs.next()) {
 			e_salary=rs.getInt(1); // storing the salary 
 			System.out.println(e_salary);
@@ -104,12 +104,12 @@ public class EmployeeUploader {
 			}
 		}
 	}
-	public void check() throws SQLIntegrityConstraintViolationException, SQLException{
+	public void check() throws SQLIntegrityConstraintViolationException, SQLException{ // method to see duplicate insert exception
 		Connection conn = EmployeeUploader.con();
 		Statement stmt = conn.createStatement();
 		stmt.executeUpdate("insert into Employee values(87,'Jack','Address6',1200,9942346,2)");
 	}
-	public static void main(String[] args) throws SQLException { // main method to invoke all of the previous methods
+	public static void main(String[] args) throws SQLException { 			// main method to invoke all of the previous methods
 		EmployeeUploader eu = new EmployeeUploader();
 		System.out.println("""
 				Press 1 for Insert Department Records: 
@@ -118,22 +118,22 @@ public class EmployeeUploader {
 				Press 4 for checking pf :
 				Press 5 for Exit : 
 				""");
-		int variable = sc.nextInt(); // storing user choice 
+		int variable = sc.nextInt(); 						// storing user choice 
 		System.out.println("-------------------------------");
-		switch(variable) { // switch case to perform exact operation according to user
+		switch(variable) { 							// switch case to perform exact operation according to user
 		case 1 : 
-			eu.storeDepartmentDetails(); // calling 1st method
+			eu.storeDepartmentDetails(); 					// calling 1st method
 			break;
 		case 2 :  
-			eu.storeEmployeeDetails(); // calling 2nd method
+			eu.storeEmployeeDetails(); 					// calling 2nd method
 			break;
 		case 3 :
 			System.out.println("Details of Department:");
-			eu.retrieveEmployeeDetails();// calling 3rd method
+			eu.retrieveEmployeeDetails();					// calling 3rd method
 		case 4 :
-			System.out.println("Enter employee id :"); // asking for the employee id to calculate his pf
-			int id = sc.nextInt(); // storing user's choice
-			eu.calculatePF(id); // calling 4th method
+			System.out.println("Enter employee id :"); 			// asking for the employee id to calculate his pf
+			int id = sc.nextInt(); 						// storing user's choice
+			eu.calculatePF(id); 						// calling 4th method
 		case 5 :
 			System.out.println("--Thank You--");
 		}
