@@ -1,4 +1,4 @@
-//Q.4 WAJP to compare two array lists
+//Q. WAJP to compare two array lists
 
 package LAB17Nov;
 
