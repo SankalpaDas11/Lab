@@ -1,4 +1,4 @@
-// Q.2 Printing even numbers by an ArrayList
+// Q. Printing even numbers by an ArrayList
 package LAB17Nov;
 
 import java.util.ArrayList; // importing ArrayList
