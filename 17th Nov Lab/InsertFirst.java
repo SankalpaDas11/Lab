@@ -1,4 +1,4 @@
-// Q.5 WAJP to insert the specified element at the front of a linked list
+// Q. WAJP to insert the specified element at the front of a linked list
 package LAB17Nov;
 
 import java.util.LinkedList; // importing linked list
