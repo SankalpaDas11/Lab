@@ -1,4 +1,4 @@
-// Q.6 WAJP to replace an element in Linked list
+// Q. WAJP to replace an element in Linked list
 package LAB17Nov;
 
 import java.util.LinkedList; // importing LinedList
