@@ -1,4 +1,4 @@
-// Q.3 WAJP to extract a portion of an array list
+// Q. WAJP to extract a portion of an array list
 package LAB17Nov;
 
 import java.util.ArrayList; 	// importing ArrayList
