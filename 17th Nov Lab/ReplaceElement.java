@@ -19,7 +19,7 @@ public class ReplaceElement {
 		System.out.println("Before replacement : " + ll); 	// printing original linkedlist
 		
 		System.out.println("The element which is to be replaced : " + ll.get(4)); 	// element we want to replace
-		ll.set(4,"China"); 								//replacing 
+		ll.set(4,"China"); 								// replacing 
 		System.out.println("After replacement : " + ll); 				// printing final linkedlist
 	}
 }
